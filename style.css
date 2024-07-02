@@ -1,0 +1,327 @@
+/* When someone enters your game, you only want them to see the opening and the option buttons. The code below will use the display property to hide certain parts of the story. Remove the comments from the code below when you're ready for that step!*
+/* Feel free to change any of the styling below!*
+/* Style the body with a background color or image if desired */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin:0;
+    overflow:hidden;
+    background-image:url("imagefolder/elevator.jpg");
+    background-size: 1400px;
+    background-repeat: no-repeat;
+    object-fit: fill;
+}
+
+.whole {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+
+}
+
+.scary{
+    font-family: 'Creepster';
+    font-size:larger;
+}
+
+/* Style the title of your story */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.allscreen h2{
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    color: white;
+    font-size:20px;
+    text-shadow: 2px 2px rgba(0, 0,0 0.8);
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    width:80%;
+    min-height: 10px;
+    max-height:fit-content;
+    background-color: #8e8d8d;
+}
+
+.inputBathroomCode {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #8e8d8d;
+    border-radius: 3px;
+    border: black 2px solid;
+    width:400px;
+    height:30px;
+    display:block;
+    color: red;
+}
+
+.inputBathCodeBut{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.passError{
+    color:black;
+    display:none;
+}
+
+/* Style the story image */
+/* Style the buttons container */
+.buttons {
+    text-align: center;
+    float:left;
+    margin: 20px;
+    padding:30px;
+    background-color: grey;
+    width:10%;
+}
+
+h4{
+    text-align:center;
+}
+
+.buttons ul{
+    list-style-type: none;
+}
+
+/* Style the elevator buttons */
+button {
+    font-size: 16px;
+    width:40px;
+    padding: 10px;
+    margin: 10px;
+    background-color: ghostwhite;
+    text-shadow: 2px 2px rgba(C0, C0, C0 0.8);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Style the screens */
+
+.allscreen{
+    visibility:visible;
+    display: flex;
+    flex-direction: column;
+    float:right;
+    width:800px;
+    height:600px;
+    margin-right:100px;
+    background-color: black;
+    color:white;
+    padding:10px;
+}
+
+.screens{
+    position:absolute;
+    width:800px;
+    height:590px;
+    background-color: #dcdcdc;
+    z-index: 2;
+}
+
+/* Floors LL */
+
+
+/* .floor1bathroom {
+    position: center;
+    visibility: hidden;
+    width:700px;
+    height:300px;
+    z-index: 3;
+    background-repeat: no-repeat;
+} */
+
+
+.floorLL p{
+    text-align: center;
+}
+
+.screens button:hover {
+    color:white;
+    background-color: blue ;
+}
+
+
+
+/* Floor LL */
+
+.floorLL,
+.floor1,
+.floor4,
+.floor3,
+.floor2,
+.floor5 {
+    position:relative;
+    visibility: hidden;
+    display:none;
+    width:800px;
+    background-color: transparent;
+    height:100%;
+    z-index: 3;
+    text-align: center;
+}
+
+
+/* Applies to all Floor */
+
+
+.floor1 img,
+.floorLL img,
+.floor3 img,
+.floor2 img,
+.floor5 img{
+    position:center;
+    max-height: 60%;
+    max-width: 80%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    border:solid black 1px;
+}
+
+.floor4 img{
+    width:300px;
+    height:400px;
+}
+
+.floorLLRightOptions,
+.floorLLLeftOptions,
+.floor1bathroom,
+.floor1office,
+.floor3options,
+.floor2options,
+.floor4options,
+.floor5options,
+.floorLLoptions,
+.floor1options{
+    visibility: hidden;
+    display:none;
+    justify-content: space-between;
+    height:90%;
+    text-align: center;
+    font-size: 30px;
+    color:white;
+    width:100%;
+    height:max-content;
+}
+
+/* .floorLLoptions button,
+.floor1options button,
+.floorLLLeftOptions button,
+.floorLLRightOptions button,
+.floor2options button,
+.floor1bathroom button, */
+
+.floor2 button,
+.floorLL button,
+.floor3 button,
+.floor4 button,
+.floor1 button,
+.floor5 button{
+    font-size: 16px;
+    width: 300px;
+    padding: 15px;
+    height:50px;
+    margin: 10px;
+    background-color: rgb(79, 79, 251);
+    text-shadow: 2px 2px rgba(C0, C0, C0 0.8);
+    color: #FFF;
+    border: black solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.8s ease;
+
+}
+
+/* Doors */
+
+.doors{
+    background-color: transparent;
+    height:100%;
+    width:100%;
+    display:inline-block;
+    position:relative;
+    z-index: 4;
+}
+
+.doorleft{
+    background-color: rgb(112, 112, 112);
+    width: 395px;
+    height:100%;
+    float:left;
+    border: solid rgb(0, 0, 0) 2.5px;
+    z-index: 4;
+}
+
+.doorright{
+    background-color: rgb(133, 133, 133);
+    width: 395px;
+    height:100%;
+    float:right;
+    border: solid rgb(0, 0, 0) 2.5px;
+    z-index: 4;
+}
+
+/*Door Animations */
+
+@keyframes doorclose{
+    0%{
+        width:0px}
+    100%{
+        width:395px;
+    }
+}
+
+@keyframes dooropen{
+    0%{
+        width:395px;
+    }
+    100%{
+        width:0px;
+    }
+}
+
+
+/* image stuff */
+
+.img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.spacebarReset{
+    text-align: center;
+    left:50%;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position:absolute;
+    color:black;
+    bottom: 5px;
+}
+
+.reset{
+    width:100px;
+    height:50px;
+    background-color: gray;
+    color:white;
+    margin:10px;
+}
+
+/* Style the text in the screens */
+
